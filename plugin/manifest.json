@@ -1,0 +1,30 @@
+{
+	"manifest_version":2,
+	"name":"job_filter",
+	"description":"Filter out the training company",
+	"version":"0.1",
+
+	"browser_action":{
+		"default_icon":"cat.ico",
+		"default_popup":"pages/popup.html"
+	},
+
+	"permissions":[
+		"activeTab",
+		"storage",
+		"http://*.51job.com"
+	],
+
+	"backgroud":{
+		"scripts":["js/jquery-3.2.1.min.js","js/backgroud.js"],
+		"persistent": true
+	},
+	
+	"content_scripts":[
+		{
+			"matches":["http://*.51job.com/*"],
+			"js":["js/jquery-3.2.1.min.js","js/backgroud.js"]
+		}
+	]
+	
+}
